@@ -13,7 +13,6 @@ import javax.swing.Timer;
 import acm.graphics.*;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
-import programming.breakout.RandomShape.Shape;
 
 public class Start extends GraphicsProgram implements KeyListener
 {
