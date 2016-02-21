@@ -17,13 +17,13 @@ import acm.util.RandomGenerator;
 public class Start extends GraphicsProgram implements KeyListener
 {
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	
+
 	double rectWidth = 70;
 	double rectHeigth = 20;
-	int boardMoveSpeed = 15;	
+	int boardMoveSpeed = 15;
 	int ballSpeed = 5;
 	int collision_i = 2;
-	
+
 	boolean ballStarted = false;
 
 	GRect[][] bricks = new GRect[10][10];
@@ -31,8 +31,7 @@ public class Start extends GraphicsProgram implements KeyListener
 	GOval ball = new GOval(20, 20);
 
 	private Timer timer = null;
-	Thread thread = null;
-	
+
 	public void run()
 	{
 		this.setSize(((int) (rectWidth + 5) * 10) - 4, screenSize.height - 150);
@@ -40,6 +39,7 @@ public class Start extends GraphicsProgram implements KeyListener
 
 		this.addKeyListeners();
 
+		// Methode: generateBall() ?
 		ball.setLocation((board.getX() + board.getWidth() / 2) - (ball.getWidth() / 2), board.getY() - board.getHeight());
 		ball.setFillColor(Color.BLACK);
 		ball.setFilled(true);
@@ -51,8 +51,6 @@ public class Start extends GraphicsProgram implements KeyListener
 
 	private void setLocations()
 	{
-		thread = new Thread();
-
 		timer = new Timer(ballSpeed * 4, new ActionListener()
 
 		{
@@ -291,6 +289,7 @@ public class Start extends GraphicsProgram implements KeyListener
 			}
 		}
 
+		// generateBall()?
 		board.setLocation(((((int) (rectWidth + 5) * 10) - 4) / 2) - 60, screenSize.height - 250);
 		board.setFillColor(Color.BLACK);
 		board.setFilled(true);
